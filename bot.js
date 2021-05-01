@@ -8,18 +8,25 @@ const privateMessage = require('./private-message')
 client.on('ready', ()  => {
     console.log("Bot is ready")
 
+
     firstMessage(client, '837996665222201344', 'Hello World', ['🔥', '😎'])
 
-    privateMessage(client, 'fuck' , 'Please Refrain from using curse words.')
+
+    privateMessage(client, 'fuck' , 'Please refrain from using curse words.')
+
 
     command (client, 'ping', (message) => {
         message.channel.send('Pong')
     })
+
+
     command(client, 'server', (message) =>{
         client.guilds.cache.forEach((guild) => {
             message.channel.send(`${guild.name} has a total of ${guild.memberCount} members.`)
         })
     })
+
+
     command(client, ['clearchannel', 'cc'], (message) =>{
         if(message.member.hasPermission('ADMINISTRATOR')){
             message.channel.messages.fetch().then((results)=>{
@@ -27,6 +34,8 @@ client.on('ready', ()  => {
             })
         }
     })
+
+
     command(client, 'status' , message =>{
         const content = message.content.replace('%status', '')
         client.user.setPresence({
@@ -34,6 +43,19 @@ client.on('ready', ()  => {
                 name: content,
                 type: 0,
             }
+        })
+    })
+
+
+    command(client, 'createChannel', (message)=>{
+        const name = message.content.replace('%createChannel', '')
+        message.guild.channels.create(name,{
+            type: 'text'
+        })
+        .then((channel)=>{
+            const categoryId = '826136542174117930'
+            channel.setParent(categoryId)
+
         })
     })
 })
