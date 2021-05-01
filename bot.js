@@ -74,7 +74,7 @@ client.on('ready', ()  => {
     })
     command(client, 'info', (message) =>{
         const embed = new Discord.MessageEmbed()
-        .setTitle('Example Text')
+        .setTitle('My Information')
         .setAuthor(message.author.username)
         .setColor('black')
         .addFields(
@@ -86,6 +86,11 @@ client.on('ready', ()  => {
             {
                 name : 'Owner Name',
                 value : 'Hrishabh',
+                inline:'true',
+            },
+            {
+                name : 'Hosting website used',
+                value : 'Heroku',
                 inline:'true',
             },
         )
