@@ -3,11 +3,14 @@ const client = new Discord.Client()
 const config = require('./config.json')
 const command = require('./command')
 const firstMessage = require('./first-message')
+const privateMessage = require('./private-message')
 
 client.on('ready', ()  => {
     console.log("Bot is ready")
 
     firstMessage(client, '837996665222201344', 'Hello World', ['🔥', '😎'])
+
+    privateMessage(client, 'fuck' , 'Please Refrain from using curse words.')
 
     command (client, 'ping', (message) => {
         message.channel.send('Pong')
