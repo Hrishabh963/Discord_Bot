@@ -6,7 +6,7 @@ const command = require('./command')
 client.on('ready', ()  => {
     console.log("Bot is ready")
 
-    command (client, ['ping', 'test'], (message) => {
+    command (client, 'ping', (message) => {
         message.channel.send('Pong')
     })
     command(client, 'server', (message) =>{
