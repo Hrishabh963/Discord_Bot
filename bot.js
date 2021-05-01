@@ -9,7 +9,7 @@ client.on('ready', ()  => {
     console.log("Bot is ready")
 
 
-    firstMessage(client, '837996665222201344', 'Hello World', ['🔥', '😎'])
+    
 
 
     privateMessage(client, 'fuck' , 'Please refrain from using curse words.')
