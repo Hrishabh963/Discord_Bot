@@ -61,7 +61,7 @@ client.on('ready', ()  => {
 
 
     command(client, 'createVoiceChannel', (message)=>{
-        const name = message.content.replace('%createChannel', '')
+        const name = message.content.replace('%createVoiceChannel', '')
         message.guild.channels.create(name,{
             type: 'voice'
         })
