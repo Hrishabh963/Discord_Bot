@@ -20,12 +20,36 @@ client.on('ready', ()  => {
     })
 
 
-    command(client, 'server', (message) =>{
-        client.guilds.cache.forEach((guild) => {
-            message.channel.send(`${guild.name} has a total of ${guild.memberCount} members.`)
-        })
-    })
+    command(client, 'serverInfo', (message) =>{
+        const {guild} = message
 
+        const { name, region, memberCount, owner, afkTimeout} = guild
+        const icon = guild.iconURL()
+
+        const embed = new Discord.MessageEmbed()
+        .setTitle(`Server Info for "${name}"`)
+        .setThumbnail(icon)
+        .addFields(
+            {
+                name: "Owner",
+                value: owner.user.tag
+            },
+            {
+                name: "Members",
+                value: memberCount
+            },
+            {
+                name: "Region",
+                value: region
+            },
+            {
+                name: "AFK timeout",
+                value: afkTimeout / 60
+            },
+        )
+        message.channel.send(embed)
+   
+    })
 
     command(client, ['clearchannel', 'cc'], (message) =>{
         if(message.member.hasPermission('ADMINISTRATOR')){
