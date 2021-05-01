@@ -72,5 +72,25 @@ client.on('ready', ()  => {
 
         })
     })
+    command(client, 'info', (message) =>{
+        const embed = new Discord.MessageEmbed()
+        .setTitle('Example Text')
+        .setAuthor(message.author.username)
+        .setColor('black')
+        .addFields(
+            {
+                name : 'Bot Name',
+                value : 'Botto',
+                inline:'true',
+            },
+            {
+                name : 'Owner Name',
+                value : 'Hrishabh',
+                inline:'true',
+            },
+        )
+
+        message.channel.send(embed)
+    })
 })
 client.login(config.token)
