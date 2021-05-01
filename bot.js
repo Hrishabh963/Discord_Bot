@@ -6,8 +6,13 @@ const command = require('./command')
 client.on('ready', ()  => {
     console.log("Bot is ready")
 
-    command (client, 'ping', (message) =>{
+    command (client, ['ping', 'test'], (message) => {
         message.channel.send('Pong')
+    })
+    command(client, 'server', (message) =>{
+        client.guilds.cache.forEach((guild) => {
+            message.channel.send(`${guild.name} has a total of ${guild.memberCount} members.`)
+        })
     })
 })
 client.login(config.token)
