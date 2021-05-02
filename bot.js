@@ -130,8 +130,34 @@ client.on('ready', ()  => {
                 name : '%info',
                 value: 'Displays bot info',
                 inline: 'true'
-            }
+            },
+            {
+                name : '%serverInfo',
+                value: 'Displays the current server info',
+                inline: 'true'
+            },
+            {
+                name : '%createchannel<channel name>',
+                value: 'Creates text channel with <channel name>',
+                inline: 'true'
+            },
+            {
+                name : '%createvoicechannel<channel name>',
+                value: 'Creates voice channel with <channel name>',
+                inline: 'true'
+            },
+            {
+                name : '%clearchannel/%cc',
+                value: 'Bulk deletes messages',
+                inline: 'true'
+            },
+            {
+                name : '%status',
+                value: 'Displays current no. of members in the server',
+                inline: 'true'
+            },
         )
+        message.channel.send(embed)
     } )
 
 
