@@ -71,8 +71,8 @@ client.on('ready', ()  => {
     })
 
 
-    command(client, 'createChannel', (message)=>{
-        const name = message.content.replace('%createChannel', '')
+    command(client, 'createchannel', (message)=>{
+        const name = message.content.replace('%createchannel', '')
         message.guild.channels.create(name,{
             type: 'text'
         })
@@ -84,8 +84,8 @@ client.on('ready', ()  => {
     })
 
 
-    command(client, 'createVoiceChannel', (message)=>{
-        const name = message.content.replace('%createVoiceChannel', '')
+    command(client, 'createvoicechannel', (message)=>{
+        const name = message.content.replace('%createvoicechannel', '')
         message.guild.channels.create(name,{
             type: 'voice'
         })
@@ -120,6 +120,25 @@ client.on('ready', ()  => {
         )
 
         message.channel.send(embed)
+    })
+    command(client, 'help', (message) =>{
+        message.channel.send(`
+        **%info**-Displays bot info
+        **%serverInfo**-Displays server info
+        **%createchannel 'channel name'**-Creates a text channel
+        **%createvoicechannel 'channel name'**-Creates a voice channel
+        **%clearchannel/%cc**-Clears all text messages in the channels
+        **%status**-Displays the number of members in the server
+        `)
+    })
+
+
+    const {prefix} = config
+
+    client.user.setPresence({
+        activity: {
+            name: `Stop it get some${prefix}help`
+        }
     })
 })
 client.login(config.token)
