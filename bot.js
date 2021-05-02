@@ -122,14 +122,41 @@ client.on('ready', ()  => {
         message.channel.send(embed)
     })
     command(client, 'help', (message) =>{
-        message.channel.send(`
-        **%info**-Displays bot info
-        **%serverInfo**-Displays server info
-        **%createchannel 'channel name'**-Creates a text channel
-        **%createvoicechannel 'channel name'**-Creates a voice channel
-        **%clearchannel/%cc**-Clears all text messages in the channels
-        **%status**-Displays the number of members in the server
-        `)
+        const embed = new Discord.MessageEmbed()
+        .setTitle('My supported commands')
+        .setColor('black')
+        .addFields(
+            {
+                name : '%info',
+                value : 'Displays bot info',
+                inline:'true',
+            },
+            {
+                name : '%serverInfo',
+                value : 'Display the current server info',
+                inline:'true',
+            },
+            {
+                name : '%createchannel <channel name>',
+                value : 'Creates a text channel with <channel name>',
+                inline:'true',
+            },
+            {
+                name : '%createvoicechannel <channel name>',
+                value : 'Creates a voice channel with <channel name>',
+                inline:'true',
+            },
+            {
+                name : '%status',
+                value : 'Displays the number members in the current server',
+                inline:'true',
+            },
+            {
+                name : '%clearchannel/%cc',
+                value : 'Clears messages in the channel',
+                inline:'true',
+            },
+        )
     })
 
 
