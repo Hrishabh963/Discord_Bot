@@ -123,41 +123,16 @@ client.on('ready', ()  => {
     })
     command(client, 'help', (message) =>{
         const embed = new Discord.MessageEmbed()
-        .setTitle('My supported commands')
+        .setTitle("My supported commands")
         .setColor('black')
         .addFields(
             {
                 name : '%info',
-                value : 'Displays bot info',
-                inline:'true',
-            },
-            {
-                name : '%serverInfo',
-                value : 'Display the current server info',
-                inline:'true',
-            },
-            {
-                name : '%createchannel <channel name>',
-                value : 'Creates a text channel with <channel name>',
-                inline:'true',
-            },
-            {
-                name : '%createvoicechannel <channel name>',
-                value : 'Creates a voice channel with <channel name>',
-                inline:'true',
-            },
-            {
-                name : '%status',
-                value : 'Displays the number members in the current server',
-                inline:'true',
-            },
-            {
-                name : '%clearchannel/%cc',
-                value : 'Clears messages in the channel',
-                inline:'true',
-            },
+                value: 'Displays bot info',
+                inline: 'true'
+            }
         )
-    })
+    } )
 
 
     const {prefix} = config
