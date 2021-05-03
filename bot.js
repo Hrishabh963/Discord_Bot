@@ -5,12 +5,14 @@ const command = require('./command')
 const firstMessage = require('./first-message')
 const privateMessage = require('./private-message')
 const poll = require('./poll')
+const welcome = require('./welcome')
 
 client.on('ready', ()  => {
     console.log("Bot is ready")
 
+    welcome(client)
 
-    
+    poll(client)
 
 
     privateMessage(client, 'fuck' , 'Please refrain from using curse words.')
@@ -207,6 +209,6 @@ client.on('ready', ()  => {
         }
     })
 
-    poll(client)
+    
 })
 client.login(config.token)
