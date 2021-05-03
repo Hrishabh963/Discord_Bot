@@ -177,7 +177,7 @@ client.on('ready', ()  => {
     command(client , 'ban', (message) => {
         const{member, mentions} = message
 
-        if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBER')){
+        if(member.hasPermission('BAN_MEMBERS')){
             const target = mentions.users.first()
             if(target){
                 const targetMember = message.guild.members.cache.get(target.id)
@@ -196,7 +196,7 @@ client.on('ready', ()  => {
     command(client , 'kick', (message) => {
         const{member, mentions} = message
 
-        if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('KICK_MEMBER')){
+        if(member.hasPermission('KICK_MEMBERS')){
             const target = mentions.users.first()
             if(target){
                 const targetMember = message.guild.members.cache.get(target.id)
