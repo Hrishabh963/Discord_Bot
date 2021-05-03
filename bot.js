@@ -186,5 +186,24 @@ client.on('ready', ()  => {
             message.channel.send(`<@${member.id}> You don't have permission to ban members`)
         }
     })
+
+
+    
+    command(client , 'kick', (message) => {
+        const{member, mentions} = message
+
+        if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('KICK_MEMBER')){
+            const target = mentions.users.first()
+            if(target){
+                const targetMember = message.guild.members.cache.get(target.id)
+                targetMember.ban()
+                message.channel.send(`<@${member.id}> The specified user is kicked`)
+            } else{
+                message.channel.send(`<@${member.id}> Please specify a user to kick`)
+            }
+        }else{
+            message.channel.send(`<@${member.id}> You don't have permission to kick members`)
+        }
+    })
 })
 client.login(config.token)
