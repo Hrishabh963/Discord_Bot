@@ -168,5 +168,23 @@ client.on('ready', ()  => {
             name: `Stop it get some${prefix}help`
         }
     })
+
+
+    command(client , 'ban', (message) => {
+        const{member, mention} = message
+
+        if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBER')){
+            const target = mention.user.first()
+            if(target){
+                const targetMember = message.guild.members.cache.get(target.id)
+                targetMember.ban()
+                message.channel.send(`${member.id} The specified user is banned`)
+            } else{
+                message.channel.send(`${member.id} Please specify a user to ban`)
+            }
+        }else{
+            message.channel.send(`${member.id} You do not have permission to use this command`)
+        }
+    })
 })
 client.login(config.token)
