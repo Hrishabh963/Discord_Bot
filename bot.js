@@ -199,7 +199,7 @@ client.on('ready', ()  => {
             const target = mentions.users.first()
             if(target){
                 const targetMember = message.guild.members.cache.get(target.id)
-                targetMember.ban()
+                targetMember.kick()
                 message.channel.send(`<@${member.id}> The specified user is kicked`)
             } else{
                 message.channel.send(`<@${member.id}> Please specify a user to kick`)
