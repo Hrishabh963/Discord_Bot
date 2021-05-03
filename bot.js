@@ -4,6 +4,7 @@ const config = require('./config.json')
 const command = require('./command')
 const firstMessage = require('./first-message')
 const privateMessage = require('./private-message')
+const poll = require('./poll')
 
 client.on('ready', ()  => {
     console.log("Bot is ready")
@@ -205,5 +206,7 @@ client.on('ready', ()  => {
             message.channel.send(`<@${member.id}> You don't have permission to kick members`)
         }
     })
+
+    poll(client)
 })
 client.login(config.token)
