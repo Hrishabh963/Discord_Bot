@@ -178,12 +178,12 @@ client.on('ready', ()  => {
             if(target){
                 const targetMember = message.guild.members.cache.get(target.id)
                 targetMember.ban()
-                message.channel.send(`${member.id} The specified user is banned`)
+                message.channel.send(`<@${member.id}> The specified user is banned`)
             } else{
-                message.channel.send(`${member.id} Please specify a user to ban`)
+                message.channel.send(`<@${member.id}> Please specify a user to ban`)
             }
         }else{
-            message.channel.send(`${member.id} You don't have permission to ban members`)
+            message.channel.send(`<@${member.id}> You don't have permission to ban members`)
         }
     })
 })
