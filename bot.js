@@ -183,7 +183,7 @@ client.on('ready', ()  => {
                 message.channel.send(`${member.id} Please specify a user to ban`)
             }
         }else{
-            message.channel.send(`${member.id} You do not have permission to use this command`)
+            message.channel.send(`${member.id} You do not have permission to ban members`)
         }
     })
 })
