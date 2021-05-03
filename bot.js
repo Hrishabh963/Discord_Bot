@@ -174,7 +174,7 @@ client.on('ready', ()  => {
         const{member, mention} = message
 
         if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBER')){
-            const target = mention.user.first()
+            const target = mention.users.first()
             if(target){
                 const targetMember = message.guild.members.cache.get(target.id)
                 targetMember.ban()
