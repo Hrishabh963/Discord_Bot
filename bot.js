@@ -10,7 +10,7 @@ const mute = require('./mute')
 client.on('ready', ()  => {
     console.log("Bot is ready")
 
-    welcome(client)
+  
 
     poll(client)
 
