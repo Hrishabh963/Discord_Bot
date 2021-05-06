@@ -1,4 +1,5 @@
 {
     "token": "ODM1MDQ0MDQzODM4NDU1ODI4.YIJtXg.s-iQ_yIQ_t5a8mxPxrz1_6fBAyY",
-    "prefix": "%"
+    "prefix": "%",
+    "redisPath":"//redis-12133.c85.us-east-1-2.ec2.cloud.redislabs.com:12133?password=9TdTuofUgQbGpCGX5NCIJd33MywcqUZd"
 }

@@ -6,7 +6,7 @@ const firstMessage = require('./first-message')
 const privateMessage = require('./private-message')
 const poll = require('./poll')
 const welcome = require('./welcome')
-
+const mute = require('./mute')
 
 client.on('ready', ()  => {
     console.log("Bot is ready")
