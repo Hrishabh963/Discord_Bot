@@ -6,6 +6,7 @@ const privateMessage = require('./private-message')
 const poll = require('./poll')
 
 const mute = require('./mute')
+const redis = require('./redis')
 
 client.on('ready', ()  => {
     console.log("Bot is ready")
@@ -208,6 +209,7 @@ client.on('ready', ()  => {
             message.channel.send(`<@${member.id}> You don't have permission to kick members`)
         }
     })
+    
 
     
 })
