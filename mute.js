@@ -62,7 +62,7 @@ module.exports = (client) => {
   command(client, 'mute', async (message) => {
     // !mute @ duration duration_type
 
-    const syntax = '!mute <@> <duration as a number> <min, hrs, days, or life>'
+    const syntax = '%mute <@> <duration as a number> <min, hrs, days, or life>'
 
     const { member, channel, content, mentions, guild } = message
 
