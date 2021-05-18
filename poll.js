@@ -1,5 +1,5 @@
 module.exports = client =>{
-    const channelIds = ['838004303444049950']
+    const channelIds = ['844210693824577568']
 
     const addReactions = message =>{
         message.react('👍')

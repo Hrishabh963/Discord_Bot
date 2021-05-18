@@ -11,7 +11,7 @@ const redis = require('./redis')
 client.on('ready', ()  => {
     console.log("Bot is ready")
 
-  
+    mute(client)
 
     poll(client)
 
