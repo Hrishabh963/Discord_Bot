@@ -16,7 +16,7 @@ client.on('ready', ()  => {
     poll(client)
 
 
-    privateMessage(client, 'fuck' , 'Please refrain from using curse words.')
+    privateMessage(client, ['fuck' , 'nigga' , 'shit' , 'fag' , 'madarchod'] , 'Please refrain from using curse words.')
 
 
     command (client, 'ping', (message) => {
@@ -24,7 +24,7 @@ client.on('ready', ()  => {
     })
 
 
-    command(client, 'serverInfo', (message) =>{
+    command(client, 'serverinfo', (message) =>{
         const {guild} = message
 
         const { name, region, memberCount, owner, afkTimeout} = guild
@@ -96,7 +96,7 @@ client.on('ready', ()  => {
         .then((channel)=>{
             const categoryId = '826136542174117933'
             channel.setParent(categoryId)
-            channel.setUserLimit(6)
+            channel.setUserLimit(9)
 
         })
     })
@@ -136,7 +136,7 @@ client.on('ready', ()  => {
                 inline: 'true'
             },
             {
-                name : '%serverInfo',
+                name : '%serverinfo',
                 value: 'Displays the current server info',
                 inline: 'true'
             },
