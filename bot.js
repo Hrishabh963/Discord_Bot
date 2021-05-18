@@ -81,20 +81,20 @@ client.on('ready', ()  => {
             type: 'text'
         })
         .then((channel)=>{
-            const categoryId = '826136542174117930'
+            const categoryId = '843723447313891329'
             channel.setParent(categoryId)
 
         })
     })
 
 
-    command(client, 'createvoicechannel', (message)=>{
+    command(client, 'voicechannel', (message)=>{
         const name = message.content.replace('%createvoicechannel', '')
         message.guild.channels.create(name,{
             type: 'voice'
         })
         .then((channel)=>{
-            const categoryId = '826136542174117933'
+            const categoryId = '843723447313891332'
             channel.setParent(categoryId)
             channel.setUserLimit(9)
 
@@ -146,7 +146,7 @@ client.on('ready', ()  => {
                 inline: 'true'
             },
             {
-                name : '%createvoicechannel<channel name>',
+                name : '%voicechannel<channel name>',
                 value: 'Creates voice channel with <channel name>',
                 inline: 'true'
             },
