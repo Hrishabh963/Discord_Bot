@@ -16,7 +16,7 @@ client.on('ready', ()  => {
     poll(client)
 
 
-    privateMessage(client, ['fuck' , 'nigga' , 'shit' , 'fag' , 'madarchod'] , 'Please refrain from using curse words.')
+    privateMessage(client, 'fuck' , 'Please refrain from using curse words.')
 
 
     command (client, 'ping', (message) => {
